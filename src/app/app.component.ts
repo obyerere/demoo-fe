@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from './auth/token-storage.service';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',

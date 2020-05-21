@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../environments/environment';
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
 import { SignUpInfo } from './signup-info';
@@ -14,9 +14,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-
-  private loginUrl = 'http://localhost:8086/api/auth/signin';
-  private signupUrl = 'http://localhost:8086/api/auth/signup';
+  apiUrl = environment.apiUrl;
+  private loginUrl = this.apiUrl + '/api/auth/signin';
+  private signupUrl = this.apiUrl + '/api/auth/signup';
 
   constructor(private http: HttpClient) {
   }
