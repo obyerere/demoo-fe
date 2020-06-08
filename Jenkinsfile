@@ -24,7 +24,7 @@ stage('Restore & Build') {
   stage('Building image') {
    steps{
     script {
-     dockerImage = docker.build registry + ":3.4"
+     dockerImage = docker.build registry + ":3.6"
     }
    }
   }
@@ -39,7 +39,7 @@ stage('Restore & Build') {
   }
   stage('Remove Unused docker image') {
    steps{
-    sh "docker rmi $registry:3.4"
+    sh "docker rmi $registry:3.6"
    }
   }
  }
